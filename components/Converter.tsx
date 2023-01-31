@@ -71,7 +71,7 @@ const Converter = () => {
 
   return (
     <form>
-      <label>Enter any number</label>
+      <label>Enter a number</label>
       <div>
         <input
           type="text"
@@ -80,7 +80,7 @@ const Converter = () => {
           onChange={ChangeHandler}
           placeholder="Enter a number"
         />
-        <p>{values.num ? ToRoman(parseInt(values.num)) : 'Output'}</p>
+        <p>{Number(values.num) < 4000 ? ToRoman(parseInt(values.num)) : 'Numbers from 1 to 3999 only'}</p>
       </div>
       <label>Enter a letter: I, V, X, L, C, D, M</label>
       <div>
@@ -91,7 +91,7 @@ const Converter = () => {
           onChange={ChangeHandler}
           placeholder="Enter a letter"
         />
-        <p>{values.roman ? FromRoman(values.roman) : 'Output'}</p>
+        <p>{values.roman ? FromRoman(values.roman) : ''}</p>
       </div>
     </form>
   );
